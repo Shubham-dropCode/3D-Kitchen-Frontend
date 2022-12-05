@@ -3,10 +3,10 @@ import useFetch from "../../../../context/productContext";
 
 const ProductList = ({ catId, subCats }) => {
   const { data, loading, error } = useFetch(
-    `/products?populate=*&[filter][categories][id][$eq]=${catId}`);
-  
+    `/products?populate=*&filters[categories][id][$eq]=${catId}${subCats.map(item => `&filters[sub-categories][id][$eq]=${item}`)}`);
 
-   console.log("this is a testing clg",data);
+
+  console.log("this is a testing clg", data);
   return (
     <div className="row">
       {data?.map((item) => {

@@ -11,7 +11,7 @@ const Header = () => {
     height: '20px',
     borderRadius: '50%',
     backgroundColor: "#B08EAD",
-    color:'white',
+    color: 'white',
     position: 'absolute',
     right: '-10px',
     top: '20px',
@@ -26,7 +26,7 @@ const Header = () => {
           <div className="col-lg-12">
             <nav className="navbar navbar-expand-lg navbar-light">
               <Link className="navbar-brand" href="/">
-                <Image src="./Logo.png" alt="logo" width={120} height={30}/>
+                <img src="Logo.png" alt="logo" />
               </Link>
               <button
                 className="navbar-toggler"
@@ -161,7 +161,7 @@ const Header = () => {
                 <Link href="/Cart">
                   <i className="flaticon-shopping-cart-black-shape" />
                   <span style={cartIconStyle}>{products.length}</span>
-                    </Link>
+                </Link>
               </div>
             </nav>
           </div>

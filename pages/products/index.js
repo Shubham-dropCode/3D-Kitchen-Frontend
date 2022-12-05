@@ -10,11 +10,12 @@ const products = () => {
   const { id } = router.query;
   const [selectSubCat, setSelectSubCat] = useState([]);
 
-  
+
   const { data } = useFetch(
     `/sub-categories?populate=*&[filter][categories][id][$eq]=${id}}`
-    );
-    console.log(id);
+  );
+  console.log(id);
+  console.log(data);
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -73,8 +74,8 @@ const products = () => {
                     <div className="select_option_dropdown">
                       {data?.map((item) => {
                         return (
-                          <div key={item.id}className="switch-wrap d-flex justify-content-between">
-                            <p>{item.attributes.title}</p>
+                          <div key={item.id} className="switch-wrap d-flex justify-content-between">
+                            <p>{item.attributes.Title}</p>
                             <div className="primary-checkbox">
                               <input
                                 type="checkbox"
@@ -94,7 +95,7 @@ const products = () => {
             </div>
             <div className="col-md-9">
               <div className="product_list">
-                <ProductList catId={id} subCats={selectSubCat}/>
+                <ProductList catId={id} subCats={selectSubCat} />
                 <div className="load_more_btn text-center">
                   <a href="#" className="btn_3">
                     Load More
